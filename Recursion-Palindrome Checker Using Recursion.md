@@ -1,39 +1,44 @@
-# 🔁 Recursion:nested Recursion in Python
+# 🔁 Recursion:Palindrome Checker Using Recursion in Python
 
 ## 🎯 AIM:
-To write a Python program to display all the positive numbers in reverse order with a difference 2 from 'N'  using nested recursion
+To write a Python program to check whether a given string is a **palindrome** using **recursion**.
 
 ---
 
 ## 🧠 ALGORITHM:
 
-1. Start the function fun(n).
-2. If n equals 1, return 1.
-3. If n equals 0, return 0.
-4. Otherwise, print the current value of n without moving to the next line.
-5. Call fun(n - 2) and pass its result again into fun().
-6. Output the final returned value from the nested recursive calls.
+1. **Start**
+2. Define a recursive function `is_palindrome(word)`
+   - **Base Case:** If the string length is less than 1, return `True`
+   - **Recursive Case:** If the first and last characters match, call the function recursively on the substring without first and last characters
+   - Else, return `False`
+3. Get input from the user
+4. Call the recursive function
+5. Print whether the string is a palindrome
+6. **Stop**
+
 ---
 
 ## 💻 PROGRAM:
-~~~
-def fun(n):
-    if n==1:
-        return 1
-    elif n==0:
-        return 0
+```
+def is_palindrome(word):
+    if len(word) < 1: 
+        return True
+    if word[0] == word[-1]: 
+        return is_palindrome(word[1:-1])
     else:
-        print(n,end=" ")
-        return(fun(fun(n-2)))
-        
-n=int(input())
-print(fun(n))
-~~~
+        return False
+
+word = input()
+
+if is_palindrome(word):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+```
 
 ## OUTPUT
-<img width="356" height="166" alt="image" src="https://github.com/user-attachments/assets/ef975f79-7672-4d3f-b99f-2364fdcfeb64" />
-
+![image](https://github.com/user-attachments/assets/4d21425a-386e-4a44-8363-d9c710b872a5)
 
 ## RESULT
-Thus the Nested recursion is verified.
-
+Thus, the program is verified successfully.
